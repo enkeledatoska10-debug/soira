@@ -3,12 +3,12 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       <div className="sticky top-0 z-50 bg-black px-3 py-2 text-center text-sm font-semibold text-white">
         <a
-          href="https://wa.me/355XXXXXXXXX?text=Pershendetje!%20Dua%20te%20shes%20me%20ju.%20Si%20funksionon%3F"
+          href="https://wa.me/355696140516?text=Pershendetje%2C%20si%20mund%20te%20shes%20tek%20ju%3F"
           target="_blank"
           rel="noopener"
           className="underline-offset-2 hover:underline"
         >
-          Kliko këtu për të shitur me ne! (WhatsApp)
+         Ke produkte për të shitur? Shkruaj në WhatsApp
         </a>
       </div>
 
