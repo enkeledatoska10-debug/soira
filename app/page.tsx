@@ -91,29 +91,35 @@ export default function Home() {
           KATEGORITË
         </h1>
 
-        <div className="flex gap-5 overflow-x-auto">
-          {[
-  { title: "FEMRA", slug: "femra", img: "https://picsum.photos/seed/femra/200" },
-  { title: "MESHKUJ", slug: "meshkuj", img: "https://picsum.photos/seed/meshkuj/200" },
-  { title: "KËPUCË", slug: "kepuce", img: "https://picsum.photos/seed/kepuce/200" },
-  { title: "AKSESORË", slug: "aksesore", img: "https://picsum.photos/seed/aksesore/200" },
-  { title: "ÇANTA", slug: "canta", img: "https://picsum.photos/seed/canta/200" },
-  { title: "BUKURI", slug: "bukuri", img: "https://picsum.photos/seed/bukuri/200" },
-].map((c) => (
-  <a
-    key={c.slug}
-    href={`/kategori/${c.slug}`}
-    className="flex min-w-[120px] flex-col items-center gap-2"
-  >
-    <div className="h-20 w-20 overflow-hidden rounded-xl border bg-gray-100">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={c.img} alt={c.title} className="h-full w-full object-cover" />
-    </div>
-    <div className="text-xs font-semibold">{c.title}</div>
-  </a>
-))}
+        <div className="flex gap-6 overflow-x-auto py-2">
+  {[
+    { title: "FEMRA", slug: "femra", img: "https://picsum.photos/seed/femra/200" },
+    { title: "MESHKUJ", slug: "meshkuj", img: "https://picsum.photos/seed/meshkuj/200" },
+    { title: "KËPUCË", slug: "kepuce", img: "https://picsum.photos/seed/kepuce/200" },
+    { title: "AKSESORË", slug: "aksesore", img: "https://picsum.photos/seed/aksesore/200" },
+    { title: "ÇANTA", slug: "canta", img: "https://picsum.photos/seed/canta/200" },
+    { title: "BUKURI", slug: "bukuri", img: "https://picsum.photos/seed/bukuri/200" },
+  ].map((c) => (
+    <a
+      key={c.slug}
+      href={`/kategori/${c.slug}`}
+      className="flex min-w-[140px] flex-col items-center gap-3"
+    >
+      <div className="h-24 w-24 overflow-hidden rounded-2xl border bg-gray-100">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={c.img}
+          alt={c.title}
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
 
-        </div>
+      <div className="text-sm font-semibold">{c.title}</div>
+    </a>
+  ))}
+</div>
+
       </section>
     </main>
   );
