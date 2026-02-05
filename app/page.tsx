@@ -28,12 +28,30 @@ export default function Home() {
 
         <div className="mx-auto max-w-6xl px-4 pb-4">
           <div className="flex gap-4 overflow-x-auto">
-            {["WOMAN", "KIDS", "SHOES", "AKSESORË"].map((x) => (
-              <div key={x} className="flex min-w-[80px] flex-col items-center gap-2">
-                <div className="h-16 w-16 rounded-full border bg-gray-100" />
-                <div className="text-xs font-semibold">{x}</div>
-              </div>
-            ))}
+            {[
+  { title: "WOMEN", img: "https://picsum.photos/seed/soira-women/200" },
+  { title: "MEN", img: "https://picsum.photos/seed/soira-men/200" },
+  { title: "SHOES", img: "https://picsum.photos/seed/soira-shoes/200" },
+  { title: "ACCESSORIES", img: "https://picsum.photos/seed/soira-acc/200" },
+].map((c) => (
+  <button
+    key={c.title}
+    className="flex min-w-[96px] flex-col items-center gap-2"
+    type="button"
+  >
+    <div className="h-16 w-16 overflow-hidden rounded-2xl border bg-gray-100">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={c.img}
+        alt={c.title}
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div className="text-xs font-semibold tracking-wide">{c.title}</div>
+  </button>
+))}
+
           </div>
         </div>
       </header>
