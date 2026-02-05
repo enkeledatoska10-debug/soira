@@ -1,31 +1,45 @@
 export default function LoginPage() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center px-4">
-      <div className="w-full max-w-md">
-        <h1 className="mb-6 text-2xl font-semibold text-center">
-          Log in
-        </h1>
+    <main className="min-h-screen bg-white">
+      <div className="mx-auto max-w-md px-4 py-10">
+        <h1 className="text-2xl font-semibold">Kyçu</h1>
+        <p className="mt-2 text-sm text-gray-600">
+          Kjo është faqe demo (pa sistem real login).
+        </p>
 
-        <form className="space-y-4">
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full rounded border px-4 py-3"
-          />
+        <form className="mt-6 space-y-4">
+          <div>
+            <label className="text-sm font-semibold">Email</label>
+            <input
+              type="email"
+              className="mt-1 w-full rounded border px-3 py-2"
+              placeholder="email@example.com"
+            />
+          </div>
 
-          <input
-            type="password"
-            placeholder="Password"
-            className="w-full rounded border px-4 py-3"
-          />
+          <div>
+            <label className="text-sm font-semibold">Fjalëkalimi</label>
+            <input
+              type="password"
+              className="mt-1 w-full rounded border px-3 py-2"
+              placeholder="******"
+            />
+          </div>
 
           <button
-            type="submit"
-            className="w-full rounded bg-black py-3 text-white font-semibold"
+            type="button"
+            className="w-full rounded bg-black py-3 font-semibold text-white"
           >
-            Log in
+            Kyçu
           </button>
         </form>
+
+        <div className="mt-6 text-sm">
+          S’ke llogari?{" "}
+          <a className="font-semibold underline" href="/account/register">
+            Regjistrohu
+          </a>
+        </div>
       </div>
     </main>
   );
