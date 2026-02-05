@@ -86,41 +86,66 @@ export default function Home() {
       </section>
 
       {/* KATEGORITË */}
-      <section className="mx-auto max-w-6xl px-4 py-6">
-        <h1 className="mb-4 text-center text-2xl font-semibold">
-          KATEGORITË
-        </h1>
+      {/* KATEGORITË – stil Perla */}
+<section className="mx-auto max-w-6xl px-4 py-10">
+  <h2 className="mb-6 text-center text-2xl font-semibold tracking-wide">
+    KOLEKSIONET
+  </h2>
 
-        <div className="flex gap-6 overflow-x-auto py-2">
-  {[
-    { title: "FEMRA", slug: "femra", img: "https://picsum.photos/seed/femra/200" },
-    { title: "MESHKUJ", slug: "meshkuj", img: "https://picsum.photos/seed/meshkuj/200" },
-    { title: "KËPUCË", slug: "kepuce", img: "https://picsum.photos/seed/kepuce/200" },
-    { title: "AKSESORË", slug: "aksesore", img: "https://picsum.photos/seed/aksesore/200" },
-    { title: "ÇANTA", slug: "canta", img: "https://picsum.photos/seed/canta/200" },
-    { title: "BUKURI", slug: "bukuri", img: "https://picsum.photos/seed/bukuri/200" },
-  ].map((c) => (
-    <a
-      key={c.slug}
-      href={`/kategori/${c.slug}`}
-      className="flex min-w-[140px] flex-col items-center gap-3"
-    >
-      <div className="h-24 w-24 overflow-hidden rounded-2xl border bg-gray-100">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={c.img}
-          alt={c.title}
-          className="h-full w-full object-cover"
-          loading="lazy"
-        />
-      </div>
+  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    {[
+      {
+        title: "TË REJA",
+        img: "https://picsum.photos/seed/tereja/800/1000",
+        href: "/te-rejat",
+      },
+      {
+        title: "ULJE",
+        img: "https://picsum.photos/seed/ulje/800/1000",
+        href: "/uljet",
+      },
+      {
+        title: "FUSTANE",
+        img: "https://picsum.photos/seed/fustane/800/1000",
+        href: "/kategori/fustane",
+      },
+      {
+        title: "SETE & KOSTUME",
+        img: "https://picsum.photos/seed/sete/800/1000",
+        href: "/kategori/sete",
+      },
+      {
+        title: "AKSESORË",
+        img: "https://picsum.photos/seed/aksesore/800/1000",
+        href: "/kategori/aksesore",
+      },
+      {
+        title: "ÇANTA",
+        img: "https://picsum.photos/seed/canta/800/1000",
+        href: "/kategori/canta",
+      },
+    ].map((c) => (
+      <a
+        key={c.title}
+        href={c.href}
+        className="group relative block overflow-hidden"
+      >
+        <div className="aspect-[3/4] w-full overflow-hidden">
+          <img
+            src={c.img}
+            alt={c.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
 
-      <div className="text-sm font-semibold">{c.title}</div>
-    </a>
-  ))}
-</div>
+        <div className="absolute bottom-0 left-0 right-0 bg-white/90 px-4 py-3 text-sm font-semibold tracking-wide">
+          {c.title}
+        </div>
+      </a>
+    ))}
+  </div>
+</section>
 
-      </section>
     </main>
   );
 }
