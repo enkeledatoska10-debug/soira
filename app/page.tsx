@@ -14,19 +14,49 @@ export default function Home() {
         </a>
       </div>
 
-      {/* HEADER */}
+            {/* HEADER */}
       <header className="border-b">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <button className="text-2xl">☰</button>
+          <button className="text-2xl" aria-label="Menu">☰</button>
 
           <div className="text-lg font-semibold tracking-wide">SOIRA</div>
 
           <div className="flex items-center gap-4 text-2xl">
-            <button>⌕</button>
-            <button>👜</button>
+            <button aria-label="Search">⌕</button>
+            <button aria-label="Cart">👜</button>
+          </div>
+        </div>
+
+        {/* 4 IKONAT NË KRYE */}
+        <div className="mx-auto max-w-6xl px-4 pb-4">
+          <div className="flex gap-5 overflow-x-auto py-2">
+            {[
+              { title: "WOMEN", slug: "femra", img: "https://picsum.photos/seed/soira-women/200" },
+              { title: "MEN", slug: "meshkuj", img: "https://picsum.photos/seed/soira-men/200" },
+              { title: "SHOES", slug: "kepuce", img: "https://picsum.photos/seed/soira-shoes/200" },
+              { title: "ACCESSORIES", slug: "aksesore", img: "https://picsum.photos/seed/soira-acc/200" },
+            ].map((c) => (
+              <a
+                key={c.slug}
+                href={`/kategori/${c.slug}`}
+                className="flex min-w-[120px] flex-col items-center gap-2"
+              >
+                <div className="h-20 w-20 overflow-hidden rounded-2xl border bg-gray-100">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={c.img}
+                    alt={c.title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="text-xs font-semibold tracking-wide">{c.title}</div>
+              </a>
+            ))}
           </div>
         </div>
       </header>
+
 
       {/* HERO SECTION */}
       <section className="relative w-full">
@@ -61,32 +91,28 @@ export default function Home() {
           KATEGORITË
         </h1>
 
-        <div className="flex gap-4 overflow-x-auto">
+        <div className="flex gap-5 overflow-x-auto">
           {[
-            { title: "FEMRA", img: "https://picsum.photos/seed/femra/200" },
-            { title: "MESHKUJ", img: "https://picsum.photos/seed/meshkuj/200" },
-            { title: "KËPUCË", img: "https://picsum.photos/seed/kepuce/200" },
-            { title: "AKSESORË", img: "https://picsum.photos/seed/aksesore/200" },
-            { title: "ÇANTA", img: "https://picsum.photos/seed/canta/200" },
-            { title: "BUKURI", img: "https://picsum.photos/seed/bukuri/200" },
-          ].map((c) => (
-            <button
-              key={c.title}
-              className="flex min-w-[96px] flex-col items-center gap-2"
-            >
-              <div className="h-16 w-16 overflow-hidden rounded-xl border bg-gray-100">
-                <img
-                  src={c.img}
-                  alt={c.title}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+  { title: "FEMRA", slug: "femra", img: "https://picsum.photos/seed/femra/200" },
+  { title: "MESHKUJ", slug: "meshkuj", img: "https://picsum.photos/seed/meshkuj/200" },
+  { title: "KËPUCË", slug: "kepuce", img: "https://picsum.photos/seed/kepuce/200" },
+  { title: "AKSESORË", slug: "aksesore", img: "https://picsum.photos/seed/aksesore/200" },
+  { title: "ÇANTA", slug: "canta", img: "https://picsum.photos/seed/canta/200" },
+  { title: "BUKURI", slug: "bukuri", img: "https://picsum.photos/seed/bukuri/200" },
+].map((c) => (
+  <a
+    key={c.slug}
+    href={`/kategori/${c.slug}`}
+    className="flex min-w-[120px] flex-col items-center gap-2"
+  >
+    <div className="h-20 w-20 overflow-hidden rounded-xl border bg-gray-100">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={c.img} alt={c.title} className="h-full w-full object-cover" />
+    </div>
+    <div className="text-xs font-semibold">{c.title}</div>
+  </a>
+))}
 
-              <div className="text-xs font-semibold">
-                {c.title}
-              </div>
-            </button>
-          ))}
         </div>
       </section>
     </main>
