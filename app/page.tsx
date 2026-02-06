@@ -113,7 +113,8 @@ export default function Home() {
                         {sec.items.map((it) => (
                           <Link
                             key={it.slug}
-                            href={`/kategori/${it.slug}`}
+                            href={`/kategori/${it.slug}/`}
+
                             className="block px-5 py-3 text-sm hover:bg-gray-100"
                             onClick={() => setMenuOpen(false)}
                           >
@@ -154,7 +155,10 @@ export default function Home() {
           <div className="text-lg font-semibold tracking-wide">SOIRA</div>
 
           <div className="flex items-center gap-4 text-2xl">
-            <button aria-label="Search">⌕</button>
+           <Link aria-label="Search" href="/search/">
+  ⌕
+</Link>
+
 
             <Link aria-label="Account" href="/account">
               👤
@@ -176,7 +180,7 @@ export default function Home() {
             ].map((c) => (
               <Link
                 key={c.slug}
-                href={`/kategori/${c.slug}`}
+                href={`/kategori/${c.slug}/`}
                 className="flex min-w-[120px] flex-col items-center gap-2"
               >
                 <div className="h-20 w-20 overflow-hidden rounded-2xl border bg-gray-100">
